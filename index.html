@@ -392,6 +392,84 @@ p { margin-bottom: 1.15rem; }
   text-transform: uppercase;
 }
 
+/* INQUIRY FORM */
+.book-divider {
+  display: flex; align-items: center; gap: 1.2rem;
+  margin: 3rem auto 2.5rem; max-width: 560px;
+}
+.book-divider::before, .book-divider::after {
+  content: ''; flex: 1;
+  height: 1px; background: rgba(201,168,76,0.2);
+}
+.book-divider span {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+}
+.inquiry-form {
+  max-width: 660px; margin: 0 auto; text-align: left;
+}
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem; margin-bottom: 1rem;
+}
+.form-row-2 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-bottom: 1rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: #fff; padding: 0.7rem 0.9rem;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  -webkit-appearance: none; appearance: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: rgba(201,168,76,0.7); }
+.form-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6); cursor: pointer; }
+.form-group select option { background: #2a1a0e; color: #fff; }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-full { margin-bottom: 1rem; }
+.form-submit {
+  width: 100%; margin-top: 0.5rem;
+  background: var(--gold); color: var(--dark-brown);
+  border: none; padding: 1rem 2rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.8rem; letter-spacing: 0.18em;
+  text-transform: uppercase; cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.form-submit:hover { background: var(--gold-light); }
+.form-submit:disabled { opacity: 0.5; cursor: default; }
+.form-status {
+  margin-top: 1rem; text-align: center;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.8rem; letter-spacing: 0.1em;
+  min-height: 1.4rem;
+}
+.form-status.success { color: #7ec87e; }
+.form-status.error { color: #e07070; }
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}
+
 /* LIGHTBOX */
 #lightbox {
   display: none; position: fixed; inset: 0;
@@ -1062,6 +1140,45 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
         </a>
       </div>
       <p class="book-note">Listing links coming soon</p>
+
+      <div class="book-divider"><span>or enquire directly</span></div>
+
+      <form class="inquiry-form" id="inquiryForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkin">Check-in</label>
+            <input type="date" id="checkin" name="checkin" required>
+          </div>
+          <div class="form-group">
+            <label for="checkout">Check-out</label>
+            <input type="date" id="checkout" name="checkout" required>
+          </div>
+          <div class="form-group">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="">—</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="guestname">Full name</label>
+            <input type="text" id="guestname" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="guestemail">Email</label>
+            <input type="email" id="guestemail" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group form-full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Any questions or special requests…"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formSubmit">Send Enquiry</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -1140,6 +1257,71 @@ function filterGallery(year, btn) {
     }
   });
 }
+
+// Inquiry form
+(function() {
+  // Set min dates
+  var today = new Date().toISOString().split('T')[0];
+  var checkin = document.getElementById('checkin');
+  var checkout = document.getElementById('checkout');
+  checkin.min = today;
+  checkout.min = today;
+
+  checkin.addEventListener('change', function() {
+    if (this.value) {
+      var next = new Date(this.value);
+      next.setDate(next.getDate() + 1);
+      checkout.min = next.toISOString().split('T')[0];
+      if (checkout.value && checkout.value <= this.value) checkout.value = '';
+    }
+  });
+
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('formSubmit');
+    var status = document.getElementById('formStatus');
+
+    // Validate dates
+    if (checkout.value && checkout.value <= checkin.value) {
+      status.className = 'form-status error';
+      status.textContent = 'Check-out must be after check-in.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.className = 'form-status';
+    status.textContent = '';
+
+    var data = new FormData(this);
+
+    // ← Replace YOUR_FORM_ID below after signing up at formspree.io
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        status.className = 'form-status success';
+        status.textContent = 'Thank you — we will be in touch shortly.';
+        document.getElementById('inquiryForm').reset();
+        checkin.min = today;
+        checkout.min = today;
+      } else {
+        throw new Error();
+      }
+    })
+    .catch(function() {
+      status.className = 'form-status error';
+      status.textContent = 'Something went wrong. Please email us directly.';
+    })
+    .finally(function() {
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+    });
+  });
+})();
 
 // Intersection Observer for fade-in
 var observer = new IntersectionObserver(function(entries) {
