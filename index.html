@@ -345,6 +345,53 @@ p { margin-bottom: 1.15rem; }
 .gallery-item:hover img { transform: scale(1.045); }
 .gallery-item.hidden { display: none; }
 
+/* BOOK */
+#book {
+  background: var(--dark-brown);
+  text-align: center;
+}
+#book .section-label { color: rgba(201,168,76,0.7); }
+#book h2 { color: var(--gold-light); }
+#book .lead { color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto 2.5rem; }
+#book .divider { margin: 1.3rem auto 2rem; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80px; }
+.book-buttons {
+  display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.book-btn {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 2.2rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.82rem; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+.book-btn-airbnb {
+  background: #FF5A5F; color: #fff;
+  border-color: #FF5A5F;
+}
+.book-btn-airbnb:hover {
+  background: transparent; color: #FF5A5F;
+}
+.book-btn-booking {
+  background: #003580; color: #fff;
+  border-color: #003580;
+}
+.book-btn-booking:hover {
+  background: transparent; color: #6fa8e8; border-color: #6fa8e8;
+}
+.book-btn svg {
+  width: 18px; height: 18px; flex-shrink: 0; fill: currentColor;
+}
+.book-note {
+  margin-top: 2rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+
 /* LIGHTBOX */
 #lightbox {
   display: none; position: fixed; inset: 0;
@@ -442,6 +489,7 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <li><a href="#history">History</a></li>
       <li><a href="#restoration">Restoration</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#book">Book</a></li>
     </ul>
   </div>
 </nav>
@@ -989,6 +1037,31 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_134042.webp" loading="lazy" onclick="openLightbox(this.src)"></div>
       <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_134243.webp" loading="lazy" onclick="openLightbox(this.src)"></div>
 
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Stay With Us</div>
+      <h2>Book Your Stay</h2>
+      <div class="divider"></div>
+      <p class="lead">Vila Vrioni is available for stays in the heart of Berat, Albania's UNESCO World Heritage city. Reserve directly through your preferred platform.</p>
+      <div class="book-buttons">
+        <a href="#" class="book-btn book-btn-airbnb" target="_blank" rel="noopener">
+          <!-- Airbnb icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c1.24 0 2.25 1.01 2.25 2.25S13.24 9 12 9 9.75 7.99 9.75 6.75 10.76 4.5 12 4.5zm5.25 13.5H6.75c-.414 0-.75-.336-.75-.75 0-3.176 2.324-5.25 6-5.25s6 2.074 6 5.25c0 .414-.336.75-.75.75z"/></svg>
+          Book on Airbnb
+        </a>
+        <a href="#" class="book-btn book-btn-booking" target="_blank" rel="noopener">
+          <!-- Booking.com icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          Book on Booking.com
+        </a>
+      </div>
+      <p class="book-note">Listing links coming soon</p>
     </div>
   </div>
 </section>
