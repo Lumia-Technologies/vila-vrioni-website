@@ -4,7 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vila Vrioni — Berat, Albania</title>
+<meta name="description" content="Vila Vrioni — a protected late Ottoman manor in Berat, Albania's UNESCO World Heritage city. Ancestral home of the Vrioni dynasty, restored to its original splendour. Private enquiries welcome.">
+<meta name="author" content="Vila Vrioni">
+<link rel="canonical" href="https://vilavrioni.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Vila Vrioni — Berat, Albania">
+<meta property="og:description" content="A protected late Ottoman manor in Albania's UNESCO World Heritage city, restored by descendants of the Vrioni dynasty — one of Albania's most distinguished aristocratic families.">
+<meta property="og:image" content="https://vilavrioni.com/Images%20Videos/20250422_133501.webp">
+<meta property="og:url" content="https://vilavrioni.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vila Vrioni">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vila Vrioni — Berat, Albania">
+<meta name="twitter:description" content="A protected late Ottoman manor in Albania's UNESCO World Heritage city. Four centuries of the Vrioni dynasty.">
+<meta name="twitter:image" content="https://vilavrioni.com/Images%20Videos/20250422_133501.webp">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%232a1a0e'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' font-weight='bold' fill='%239a7b2e' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LandmarksOrHistoricalBuildings", "LodgingBusiness"],
+  "name": "Vila Vrioni",
+  "alternateName": "Objekti i Yzedin Galip Pashë Vrioni",
+  "description": "Protected late Ottoman manor in Berat, Albania's UNESCO World Heritage city. Ancestral home of the Vrioni dynasty, restored by family descendants.",
+  "url": "https://vilavrioni.com/",
+  "image": "https://vilavrioni.com/Images%20Videos/20250422_133501.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berat",
+    "addressCountry": "AL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7058,
+    "longitude": 19.8519
+  },
+  "touristType": "Heritage Tourism"
+}
+</script>
+
+<!-- Preload & Fonts -->
+<link rel="preload" as="image" href="Images%20Videos/20250422_133501.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -72,8 +120,8 @@ nav ul li a:hover { color: var(--gold-light); }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url('Images%20Videos/20230807_080426.webp');
-  background-size: cover; background-position: center 40%;
+  background-image: url('Images%20Videos/20250422_133501.webp');
+  background-size: cover; background-position: center center;
   transform: scale(1.04);
   transition: transform 10s ease;
 }
@@ -534,6 +582,181 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
   text-transform: uppercase; color: rgba(201,168,76,0.55);
 }
 
+/* CTA BUTTON */
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  border: 1px solid var(--gold-light);
+  color: var(--gold-light);
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  margin-top: 1.8rem;
+}
+.cta-button:hover {
+  background: var(--gold);
+  color: var(--dark-brown);
+  border-color: var(--gold);
+}
+
+/* FAMILY PORTRAITS */
+.family-portrait {
+  width: 110px; height: 140px;
+  object-fit: cover; border-radius: 4px;
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.izedin-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.izedin-photos figure { margin: 0; }
+.izedin-photos img {
+  width: 100%; height: 200px;
+  object-fit: cover; cursor: pointer;
+  border-radius: 3px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.izedin-photos img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+.izedin-photos figcaption {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem; color: var(--text-light);
+  letter-spacing: 0.06em; margin-top: 0.45rem;
+  font-style: italic;
+}
+
+/* NEVIN BLOCK */
+.nevin-block {
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: 2.5rem 3rem;
+  margin-top: 3rem;
+  border-radius: 0 4px 4px 0;
+}
+.nevin-block h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem; color: var(--medium-brown);
+  margin-bottom: 0.8rem;
+}
+.nevin-block p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* HERITAGE PHOTOS */
+.heritage-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 1.8rem 0 0;
+}
+.heritage-photos figure { margin: 0; }
+.heritage-photos img {
+  width: 100%; height: 220px;
+  object-fit: cover; cursor: pointer;
+  border-radius: 3px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.heritage-photos img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+.heritage-photos figcaption {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem; color: var(--text-light);
+  letter-spacing: 0.06em; margin-top: 0.45rem;
+  font-style: italic;
+}
+
+/* VISION SECTION */
+.vision-section {
+  background: var(--dark-brown);
+  color: rgba(255,255,255,0.85);
+}
+.vision-section .section-label { color: var(--gold); }
+.vision-section h2 { color: var(--gold-light); }
+.vision-section .divider { background: linear-gradient(90deg, var(--gold-light), transparent); }
+.vision-section .lead { color: rgba(255,255,255,0.65); }
+.vision-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 3.5rem 0 3rem;
+}
+.vision-feature h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+}
+.vision-feature ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.vision-feature ul li {
+  padding: 0.45rem 0 0.45rem 1.3rem;
+  position: relative;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.65;
+}
+.vision-feature ul li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: var(--gold);
+}
+.vision-cta {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  margin-top: 1rem;
+}
+.vision-cta p {
+  color: rgba(255,255,255,0.45);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+/* HAMBURGER MENU */
+.nav-toggle {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  padding: 0.5rem; flex-direction: column;
+  gap: 5px;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px;
+  background: var(--gold-light);
+  transition: all 0.3s ease;
+}
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* INQUIRY TYPE */
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 /* FADE-IN */
 .fade-in {
   opacity: 0; transform: translateY(22px);
@@ -543,13 +766,37 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
 
 /* RESPONSIVE */
 @media (max-width: 800px) {
-  nav ul { display: none; }
+  .nav-toggle { display: flex; }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(20,10,4,0.98);
+    flex-direction: column;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  nav ul.nav-open { display: flex; }
+  nav ul li { width: 100%; }
+  nav ul li a {
+    display: block;
+    padding: 0.9rem 2rem;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-image::before { display: none; }
   .gallery-grid { columns: 2 150px; }
   .timeline-photos { grid-template-columns: 1fr 1fr; }
   section { padding: 4rem 1.25rem; }
   .persecution-block { padding: 2rem 1.5rem; }
+  .nevin-block { padding: 1.8rem 1.5rem; }
+  .vision-features { grid-template-columns: 1fr; gap: 2rem; }
+  .heritage-photos { grid-template-columns: 1fr; }
+  .heritage-photos img { height: 260px; }
+  .izedin-photos { grid-template-columns: 1fr; }
+  .izedin-photos img { height: 260px; }
+  .family-portrait { width: 80px; height: 100px; }
+  .form-row-3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .gallery-grid { columns: 2 110px; }
@@ -566,9 +813,13 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <li><a href="#about">The Villa</a></li>
       <li><a href="#history">History</a></li>
       <li><a href="#restoration">Restoration</a></li>
+      <li><a href="#vision">The Vision</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#book">Book</a></li>
+      <li><a href="#book">Enquire</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -577,10 +828,11 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Heritage Restoration — Berat, Albania</div>
+    <div class="hero-eyebrow">Berat, Albania</div>
     <h1>Vila Vrioni</h1>
-    <div class="hero-subtitle">Reclaiming a Legacy, Stone by Stone</div>
-    <div class="hero-meta">Late Ottoman Era &nbsp;·&nbsp; Protected Cultural Monument &nbsp;·&nbsp; Restoration Since 2021</div>
+    <div class="hero-subtitle">Where Four Centuries of Legacy Are Written in Stone</div>
+    <div class="hero-meta">Late Ottoman Manor &nbsp;·&nbsp; UNESCO World Heritage City &nbsp;·&nbsp; Protected Cultural Monument</div>
+    <a href="#about" class="cta-button">Discover the Story</a>
   </div>
   <div class="scroll-hint">Scroll</div>
 </section>
@@ -590,15 +842,15 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
   <div class="container">
     <div class="about-grid fade-in">
       <div>
-        <div class="section-label">The Property</div>
+        <div class="section-label">The Estate</div>
         <h2>A Manor in the City of a Thousand Windows</h2>
         <div class="divider"></div>
-        <p class="lead">In the heart of Berat — Albania's UNESCO World Heritage city — stands the historic compound of the Vrioni family, one of the most distinguished aristocratic dynasties in Albanian history.</p>
-        <p>Officially designated as a protected cultural monument under the name <em>Objekti i Yzedin Galip Pashë Vrioni</em>, the compound reflects the late Ottoman and early-independence architectural tradition. Its two-storey rendered main building, vaulted stone outbuildings, stone-paved courtyard, and intricately coffered wooden ceilings speak to a world of wealth, civic pride, and refined craftsmanship.</p>
-        <p>Confiscated and misused during the communist dictatorship, the villa was left to decay for decades. Since 2021 it has been the subject of a careful, loving restoration — returning traditional materials and methods to a building that deserves to be remembered.</p>
+        <p class="lead">In the heart of Berat — Albania's UNESCO World Heritage city and one of Europe's last undiscovered corners — stands the ancestral compound of the Vrioni family, one of the most distinguished aristocratic dynasties in Albanian history.</p>
+        <p>Officially designated as a protected cultural monument under the name <em>Objekti i Yzedin Galip Pashë Vrioni</em>, the compound represents Albania's finest surviving example of late Ottoman residential architecture. Its two-storey rendered main building, vaulted stone outbuildings, stone-paved courtyard, and intricately coffered wooden ceilings speak to a world of wealth, civic pride, and refined craftsmanship that few properties in the region can match.</p>
+        <p>Confiscated during the communist dictatorship and left to decay for decades, the villa has been the subject of a meticulous, museum-quality restoration since 2021. Today, a descendant of Izedin Vrioni is returning the compound to its original splendour — stone by stone, timber by timber.</p>
       </div>
       <div class="about-image">
-        <img src="Images%20Videos/IMG_20210724_131709.webp" alt="Vila Vrioni main facade, July 2021" onclick="openLightbox(this.src, 'Main facade, July 2021')">
+        <img src="Images%20Videos/20250422_132928.webp" alt="Vila Vrioni front facade, April 2025" onclick="openLightbox(this.src, 'Vila Vrioni, April 2025')">
       </div>
     </div>
   </div>
@@ -621,6 +873,7 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <h4>Notable Members of the Vrioni Family</h4>
 
       <div class="family-member">
+        <img src="Images%20Videos/Omer_Vrionis.jpg" alt="Oil portrait of Omer Pasha Vrioni I, Ottoman general" class="family-portrait" onclick="openLightbox(this.src, 'Omer Pasha Vrioni I — Ottoman general, d. 1828')">
         <div class="member-years">d. 1828</div>
         <div class="member-info">
           <strong>Omer Pasha Vrioni I</strong>
@@ -673,6 +926,21 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <h3>Izedin Vrioni — Mayor of Berat</h3>
       <p>Izedin Vrioni (also written Yzedin Bej Vrioni) was the son of Galip Pasha Vrioni of the Fier branch and Nasip hanëm Vlora, and brother of Qemal Bey Vrioni. He is the family member most closely associated with this property — an official 2016 Albanian heritage decision names the protected building <em>Objekti i Yzedin Galip Pashë Vrioni</em>.</p>
       <p>He served as one of Berat's most prominent mayors across the formative decades of Albanian independence, repeatedly called upon for his leadership in a politically volatile era. He also commanded the Berat forces during the <strong>Vlora War</strong> of June–August 1920 — the decisive confrontation between Albanian nationalists and the Kingdom of Italy, whose Albanian victory compelled Italy to relinquish Vlorë and formally recognise Albania's 1913 borders.</p>
+
+      <div class="izedin-photos">
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Galip%20Vrioni.jpeg" alt="Izedin Vrioni on a balcony overlooking Berat, circa 1930s" onclick="openLightbox(this.src, 'Izedin Vrioni overlooking Berat, c. 1930s')">
+          <figcaption>Izedin Vrioni overlooking Berat, c. 1930s</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Glip%20Vrioni%202.jpeg" alt="Izedin Vrioni, Mayor of Berat" onclick="openLightbox(this.src, 'Izedin Vrioni, Mayor of Berat')">
+          <figcaption>Izedin Vrioni, Mayor of Berat</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20and%20Xhemal%20Vrioni.jpeg" alt="Yzedin and Xhemal Vrioni" onclick="openLightbox(this.src, 'Yzedin and Xhemal Vrioni')">
+          <figcaption>Yzedin and Xhemal Vrioni</figcaption>
+        </figure>
+      </div>
     </div>
 
     <table class="mayor-table fade-in">
@@ -705,6 +973,25 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
         <li><strong>Iliaz Vrioni's remains</strong> — exhumed from Paris in 1946 and thrown into the Osum River in Berat. He has no grave.</li>
       </ul>
       <p>In 2009 the European Court of Human Rights ruled against Albania in <em>Vrioni and Others v. Albania and Italy</em> (App. nos. 35720/04 &amp; 42832/06), finding violations of the right to property and fair trial, with compensation of approximately €1.9 million awarded to the heirs.</p>
+    </div>
+
+    <div class="nevin-block fade-in">
+      <h3>Nevin Vrioni</h3>
+      <p>Nevin Vrioni was born in this house. She lived within these walls until she was thirteen years old, when the communist regime confiscated everything — the villa, the estates, the name itself. Today, her grandchild is restoring Vila Vrioni — not just as a building, but as a promise kept across generations.</p>
+      <div class="heritage-photos">
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Nevin%20with%20her%20mother.jpeg" alt="Nevin with her mother in the courtyard of Vila Vrioni" onclick="openLightbox(this.src, 'Nevin with her mother, in the courtyard of Vila Vrioni')">
+          <figcaption>Nevin with her mother, in the courtyard of Vila Vrioni</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Nevin%202.jpeg" alt="Young Nevin Vrioni" onclick="openLightbox(this.src, 'Young Nevin Vrioni')">
+          <figcaption>Young Nevin Vrioni</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Xhemal%20and%20Nevin%20with%20friends%20in%20Berat.jpeg" alt="Xhemal and Nevin with friends in Berat" onclick="openLightbox(this.src, 'Xhemal and Nevin with friends in Berat')">
+          <figcaption>Xhemal and Nevin with friends in Berat</figcaption>
+        </figure>
+      </div>
     </div>
 
   </div>
@@ -794,6 +1081,65 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
   </div>
 </section>
 
+<!-- THE VISION -->
+<section id="vision" class="vision-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">The Vision</div>
+      <h2>A Living Heritage</h2>
+      <div class="divider"></div>
+      <p class="lead">Vila Vrioni is being restored not as a museum piece, but as a living testament to four centuries of legacy — a place where the craftsmanship of the past meets the expectations of the most discerning guests.</p>
+    </div>
+    <div class="heritage-photos fade-in" style="margin-bottom:3rem">
+      <figure>
+        <img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page13.jpg" alt="3D architectural rendering of Vila Vrioni courtyard, fully restored" onclick="openLightbox(this.src, 'Restoration vision — courtyard view')">
+        <figcaption>Restoration vision — courtyard view</figcaption>
+      </figure>
+      <figure>
+        <img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page10.jpg" alt="3D aerial rendering of Vila Vrioni compound, fully restored" onclick="openLightbox(this.src, 'Restoration vision — aerial view')">
+        <figcaption>Restoration vision — aerial view</figcaption>
+      </figure>
+      <figure>
+        <img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page12.jpg" alt="3D rendering of Vila Vrioni entrance and courtyard" onclick="openLightbox(this.src, 'Restoration vision — entrance detail')">
+        <figcaption>Restoration vision — entrance detail</figcaption>
+      </figure>
+    </div>
+    <div class="vision-features fade-in">
+      <div class="vision-feature">
+        <h4>The Architecture</h4>
+        <ul>
+          <li>Stone barrel vaults and arched konak from the Ottoman period</li>
+          <li>Hand-carved walnut coffered ceilings, restored by master craftsmen</li>
+          <li>Limestone courtyard returned to its original form</li>
+          <li>Two-storey compound with vaulted outbuildings</li>
+        </ul>
+      </div>
+      <div class="vision-feature">
+        <h4>The Heritage</h4>
+        <ul>
+          <li>Four centuries of the Vrioni dynasty — Ottoman generals, Prime Ministers, signatories of Albanian independence</li>
+          <li>Official Protected Cultural Monument of Albania</li>
+          <li>Located in Berat's historic quarter, within the UNESCO World Heritage zone</li>
+          <li>European Court of Human Rights recognition (2009)</li>
+        </ul>
+      </div>
+      <div class="vision-feature">
+        <h4>The Setting</h4>
+        <ul>
+          <li>Berat: the City of a Thousand Windows, UNESCO World Heritage since 2008</li>
+          <li>One of the last undiscovered corners of the Mediterranean</li>
+          <li>Albania's ancient heartland — mountains, rivers, Ottoman and Byzantine layers</li>
+          <li>Two hours from Tirana; direct flights from across Europe</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vision-cta fade-in">
+      <p>For private enquiries, please get in touch.</p>
+      <a href="#book" class="cta-button">Private Enquiries</a>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY -->
 <section id="gallery">
   <div class="container">
@@ -801,7 +1147,7 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <div class="section-label">Photography Archive</div>
       <h2>Gallery</h2>
       <div class="divider"></div>
-      <p class="lead">A visual record of Vila Vrioni across the years — exterior and interior, decay and renewal, stone and timber.</p>
+      <p class="lead">A visual record of Vila Vrioni across the years — from the family archive to the restoration in progress.</p>
     </div>
     <div class="gallery-tabs fade-in">
       <button class="gallery-tab active" onclick="filterGallery('all',this)">All</button>
@@ -809,6 +1155,7 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <button class="gallery-tab" onclick="filterGallery('2022',this)">2022</button>
       <button class="gallery-tab" onclick="filterGallery('2023',this)">2023</button>
       <button class="gallery-tab" onclick="filterGallery('2025',this)">2025</button>
+      <button class="gallery-tab" onclick="filterGallery('heritage',this)">Heritage</button>
     </div>
     <div class="gallery-grid fade-in" id="galleryGrid">
 
@@ -1115,6 +1462,22 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_134042.webp" loading="lazy" onclick="openLightbox(this.src)"></div>
       <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_134243.webp" loading="lazy" onclick="openLightbox(this.src)"></div>
 
+      <!-- Heritage -->
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/Omer_Vrionis.jpg" alt="Omer Pasha Vrioni I, Ottoman general" loading="lazy" onclick="openLightbox(this.src, 'Omer Pasha Vrioni I — Ottoman general, d. 1828')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Galip%20Vrioni.jpeg" alt="Izedin Vrioni overlooking Berat" loading="lazy" onclick="openLightbox(this.src, 'Izedin Vrioni overlooking Berat, c. 1930s')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Glip%20Vrioni%202.jpeg" alt="Izedin Vrioni, Mayor of Berat" loading="lazy" onclick="openLightbox(this.src, 'Izedin Vrioni, Mayor of Berat')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20and%20Xhemal%20Vrioni.jpeg" alt="Yzedin and Xhemal Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Yzedin and Xhemal Vrioni')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Nevin%20with%20her%20mother.jpeg" alt="Nevin with her mother in the courtyard of Vila Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Nevin with her mother, in the courtyard of Vila Vrioni')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Nevin%202.jpeg" alt="Young Nevin Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Young Nevin Vrioni')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Xhemal%20and%20Nevin%20with%20friends%20in%20Berat.jpeg" alt="Xhemal and Nevin with friends in Berat" loading="lazy" onclick="openLightbox(this.src, 'Xhemal and Nevin with friends in Berat')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page13.jpg" alt="3D rendering — Vila Vrioni courtyard restored" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — courtyard view')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page10.jpg" alt="3D rendering — Vila Vrioni aerial view" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — aerial view')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page11.jpg" alt="3D rendering — Vila Vrioni corner view" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — corner view')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page5.jpg" alt="Architectural elevation — south facade restoration plan" loading="lazy" onclick="openLightbox(this.src, 'Architectural elevation — south facade')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page2.jpg" alt="Floor plan — ground floor restoration layout" loading="lazy" onclick="openLightbox(this.src, 'Ground floor restoration plan')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page1.jpg" alt="Vila Vrioni exterior views, 2010-2012" loading="lazy" onclick="openLightbox(this.src, 'Vila Vrioni exterior — pre-restoration, 2010–2012')"></div>
+      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page3.jpg" alt="Vila Vrioni compound aerial satellite view with site boundaries" loading="lazy" onclick="openLightbox(this.src, 'Compound overview — satellite with site boundaries')"></div>
+
     </div>
   </div>
 </section>
@@ -1123,10 +1486,10 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
 <section id="book">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">Stay With Us</div>
-      <h2>Book Your Stay</h2>
+      <div class="section-label">Get in Touch</div>
+      <h2>Enquire</h2>
       <div class="divider"></div>
-      <p class="lead">Vila Vrioni is available for stays in the heart of Berat, Albania's UNESCO World Heritage city. Reserve directly through your preferred platform.</p>
+      <p class="lead">Whether you are interested in a stay, a private event, a partnership, or simply the story — we welcome your enquiry.</p>
       <div class="book-buttons">
         <a href="#" class="book-btn book-btn-airbnb" target="_blank" rel="noopener">
           <!-- Airbnb icon -->
@@ -1144,18 +1507,36 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
       <div class="book-divider"><span>or enquire directly</span></div>
 
       <form class="inquiry-form" id="inquiryForm">
+        <div class="form-row-3">
+          <div class="form-group">
+            <label for="inquiry_type">Nature of Enquiry</label>
+            <select id="inquiry_type" name="inquiry_type" required>
+              <option value="">—</option>
+              <option>Guest Stay</option>
+              <option>Private Event</option>
+              <option>Partnership</option>
+              <option>Cultural / Heritage</option>
+              <option>Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="organisation">Organisation <span style="font-size:0.7rem;opacity:0.5">(optional)</span></label>
+            <input type="text" id="organisation" name="organisation" placeholder="Company or organisation">
+          </div>
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label for="checkin">Check-in</label>
-            <input type="date" id="checkin" name="checkin" required>
+            <input type="date" id="checkin" name="checkin">
           </div>
           <div class="form-group">
             <label for="checkout">Check-out</label>
-            <input type="date" id="checkout" name="checkout" required>
+            <input type="date" id="checkout" name="checkout">
           </div>
           <div class="form-group">
             <label for="guests">Guests</label>
-            <select id="guests" name="guests" required>
+            <select id="guests" name="guests">
               <option value="">—</option>
               <option>1</option><option>2</option><option>3</option>
               <option>4</option><option>5</option><option>6+</option>
@@ -1186,8 +1567,9 @@ footer em { color: rgba(201,168,76,0.6); font-style: italic; }
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Vila Vrioni</div>
-  <p>Berat, Albania &nbsp;·&nbsp; In Restoration</p>
+  <p>Berat, Albania &nbsp;·&nbsp; A Vrioni Family Restoration</p>
   <p><em>Objekti i Yzedin Galip Pashë Vrioni</em> &nbsp;·&nbsp; Protected Cultural Monument</p>
+  <p style="font-size:0.68rem;opacity:0.35;margin-top:0.8rem">European Court of Human Rights: <em>Vrioni and Others v. Albania</em> (2009)</p>
   <div class="heritage-badge">Berat · UNESCO World Heritage City</div>
 </footer>
 
@@ -1334,6 +1716,24 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+// Hamburger menu
+document.getElementById('navToggle').addEventListener('click', function() {
+  var ul = this.parentElement.querySelector('ul');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  ul.classList.toggle('nav-open');
+  this.classList.toggle('active');
+  this.setAttribute('aria-expanded', String(!expanded));
+});
+document.querySelectorAll('nav ul li a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    var ul = document.querySelector('nav ul');
+    var toggle = document.getElementById('navToggle');
+    ul.classList.remove('nav-open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+});
 </script>
 </body>
 </html>

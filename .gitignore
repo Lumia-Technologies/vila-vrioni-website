@@ -15,3 +15,9 @@ desktop.ini
 
 # Office temporary lock files
 ~$*
+
+# Research documents (not web assets)
+*.docx
+*.pdf
+VRIONI_text_markdown.md
+Izedin Vrioni Research Parameters_*
