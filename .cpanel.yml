@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/%USER%/vrioni.al/
+    - /bin/cp -R index.html "$DEPLOYPATH"
+    - /bin/cp -R .htaccess "$DEPLOYPATH"
+    - /bin/cp -R "Images Videos" "$DEPLOYPATH"
