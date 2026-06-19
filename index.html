@@ -1629,8 +1629,7 @@ function filterGallery(year, btn) {
 
     var data = new FormData(this);
 
-    // ← Replace YOUR_FORM_ID below after signing up at formspree.io
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    fetch('send.php', {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
