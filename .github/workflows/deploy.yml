@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to vrioni.al & GitHub Pages
 
 on:
   push:
@@ -10,15 +10,30 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  ftp-deploy:
+    name: Deploy to vrioni.al via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.vrioni.al
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /
+          dangerous-clean-slate: false
+
+  pages-deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
