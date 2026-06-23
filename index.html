@@ -55,754 +55,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"></noscript>
-<style>
-:root {
-  --cream: #f4ede0;
-  --warm-white: #faf7f2;
-  --dark-brown: #2a1a0e;
-  --medium-brown: #5c3d1e;
-  --gold: #9a7b2e;
-  --gold-light: #c9a84c;
-  --stone: #8a7a68;
-  --stone-light: #d6cdbf;
-  --text: #2a1a0e;
-  --text-light: #6b5744;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
-  background: var(--warm-white);
-  color: var(--text);
-  font-size: 19px;
-  line-height: 1.75;
-}
-
-/* NAV */
-nav {
-  position: fixed; top: 0; width: 100%; z-index: 1000;
-  padding: 0 2rem;
-  background: rgba(20, 10, 4, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201,168,76,0.25);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  height: 62px;
-}
-.nav-logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--gold-light); font-size: 1.25rem; font-weight: 500;
-  letter-spacing: 0.06em; text-decoration: none;
-}
-.nav-logo span {
-  color: rgba(255,255,255,0.45);
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.16em;
-  margin-left: 0.6em; font-weight: 300;
-}
-nav ul { list-style: none; display: flex; gap: 2rem; }
-nav ul li a {
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.73rem; letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-nav ul li a:hover { color: var(--gold-light); }
-
-/* HERO */
-#hero {
-  height: 100vh; min-height: 580px;
-  position: relative; display: flex;
-  align-items: center; justify-content: center; overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('Images%20Videos/hero.webp');
-  background-size: cover; background-position: center center;
-  transform: scale(1.04);
-  transition: transform 10s ease;
-}
-#hero:hover .hero-bg { transform: scale(1.0); }
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(15,8,3,0.78) 0%, rgba(15,8,3,0.42) 55%, rgba(15,8,3,0.68) 100%);
-}
-.hero-content {
-  position: relative; z-index: 2;
-  text-align: center; color: white;
-  padding: 2rem; max-width: 820px;
-}
-.hero-eyebrow {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--gold-light);
-  margin-bottom: 1.2rem;
-}
-#hero h1 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 400; line-height: 1.1;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
-}
-.hero-subtitle {
-  font-family: 'Crimson Text', Georgia, serif;
-  font-size: 1.22rem; color: rgba(255,255,255,0.82);
-  font-style: italic; margin-bottom: 2.5rem;
-}
-.hero-meta {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.7rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
-}
-.scroll-hint {
-  position: absolute; bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%); z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  color: rgba(255,255,255,0.4);
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-  animation: scrollbounce 2.5s infinite;
-}
-.scroll-hint::after {
-  content: ''; display: block;
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-}
-@keyframes scrollbounce {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(7px); }
-}
-
-/* SECTIONS */
-section { padding: 6rem 2rem; }
-.container { max-width: 1100px; margin: 0 auto; }
-.section-label {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.7rem; font-weight: 400;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 0.7rem;
-}
-h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
-  font-weight: 400; line-height: 1.2;
-  color: var(--dark-brown); margin-bottom: 1.2rem;
-}
-h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.55rem; font-weight: 400;
-  color: var(--medium-brown);
-  margin-bottom: 0.9rem; margin-top: 2.8rem;
-}
-h3:first-child { margin-top: 0; }
-p { margin-bottom: 1.15rem; }
-.lead {
-  font-size: 1.13rem; color: var(--text-light); font-style: italic;
-}
-.divider {
-  width: 56px; height: 2px;
-  background: linear-gradient(to right, var(--gold), transparent);
-  margin: 1.3rem 0 2.4rem;
-}
-
-/* ABOUT */
-#about { background: var(--cream); }
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4.5rem; align-items: center;
-}
-.about-image { position: relative; }
-.about-image img {
-  width: 100%; height: 510px;
-  object-fit: cover; display: block;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
-}
-.about-image img:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.22); }
-.about-image::before {
-  content: '';
-  position: absolute; top: -14px; left: -14px; right: 14px; bottom: 14px;
-  border: 1px solid rgba(201,168,76,0.45);
-  pointer-events: none;
-}
-
-/* HISTORY */
-#history { background: var(--warm-white); }
-.family-tree {
-  background: var(--cream);
-  border-left: 3px solid var(--gold);
-  padding: 2rem 2.5rem; margin: 2.5rem 0;
-}
-.family-tree h4 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.08rem; font-weight: 500;
-  color: var(--dark-brown); margin-bottom: 1.3rem;
-}
-.family-member {
-  display: flex; align-items: flex-start; gap: 1.1rem;
-  margin-bottom: 1rem; padding-bottom: 1rem;
-  border-bottom: 1px solid var(--stone-light);
-}
-.family-member:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.member-years {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; color: var(--gold);
-  white-space: nowrap; padding-top: 0.2rem;
-  min-width: 88px; letter-spacing: 0.04em;
-}
-.member-info strong {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1rem; font-weight: 500;
-  color: var(--medium-brown); display: block;
-  margin-bottom: 0.1rem;
-}
-.member-info p {
-  font-size: 0.9rem; margin-bottom: 0; color: var(--text-light);
-}
-
-/* MAYOR TABLE */
-.mayor-table {
-  width: 100%; border-collapse: collapse;
-  margin: 2rem 0;
-}
-.mayor-table th {
-  background: var(--dark-brown); color: var(--gold-light);
-  padding: 0.8rem 1.2rem; text-align: left;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.16em;
-  text-transform: uppercase; font-weight: 400;
-}
-.mayor-table td {
-  padding: 0.75rem 1.2rem;
-  border-bottom: 1px solid var(--stone-light);
-  font-size: 1rem;
-}
-.mayor-table tr:nth-child(even) td { background: var(--cream); }
-.mayor-table td:first-child {
-  color: var(--gold);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.12rem; font-weight: 500;
-}
-
-/* PERSECUTION BLOCK */
-.persecution-block {
-  background: #120c06; color: #d4c5a9;
-  padding: 3rem 3.5rem; margin: 3rem 0;
-  position: relative;
-}
-.persecution-block::before {
-  content: ''; position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px; background: #8b1a1a;
-}
-.persecution-block h3 { color: #c9a070; margin-top: 0; }
-.persecution-block p { color: #c4b49a; }
-.persecution-list { list-style: none; margin: 1.5rem 0; }
-.persecution-list li {
-  padding: 0.55rem 0 0.55rem 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  font-size: 0.98rem; position: relative; color: #c4b49a;
-}
-.persecution-list li::before {
-  content: '—'; position: absolute; left: 0; color: #8b1a1a;
-}
-.persecution-list li strong { color: #ddd0ba; }
-
-/* RESTORATION TIMELINE */
-#restoration { background: var(--cream); }
-.timeline { position: relative; padding-left: 3rem; }
-.timeline::before {
-  content: ''; position: absolute;
-  left: 0.8rem; top: 0.4rem; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--gold-light), rgba(154,123,46,0.1));
-}
-.timeline-entry { position: relative; margin-bottom: 5rem; }
-.timeline-dot {
-  position: absolute; left: -2.3rem; top: 0.5rem;
-  width: 13px; height: 13px; border-radius: 50%;
-  background: var(--gold); border: 2px solid var(--cream);
-  box-shadow: 0 0 0 3px var(--gold-light);
-}
-.timeline-year {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.6rem; font-weight: 400; color: var(--gold);
-  line-height: 1;
-}
-.timeline-period {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--stone);
-  margin: 0.3rem 0 1rem;
-}
-.timeline-text { margin-bottom: 1.5rem; font-size: 1.02rem; }
-.timeline-photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 0.6rem;
-}
-.timeline-photos img {
-  width: 100%; height: 175px;
-  object-fit: cover; cursor: pointer; display: block;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.timeline-photos img:hover {
-  transform: scale(1.025);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
-}
-
-/* GALLERY */
-#gallery { background: var(--dark-brown); padding: 6rem 2rem; }
-#gallery .section-label { color: rgba(201,168,76,0.8); }
-#gallery h2 { color: var(--gold-light); }
-#gallery .lead { color: rgba(255,255,255,0.55); }
-#gallery .divider { background: linear-gradient(to right, var(--gold-light), transparent); }
-.gallery-tabs {
-  display: flex; gap: 0.6rem;
-  margin-bottom: 2rem; flex-wrap: wrap;
-}
-.gallery-tab {
-  background: none;
-  border: 1px solid rgba(201,168,76,0.35);
-  color: rgba(255,255,255,0.55);
-  padding: 0.35rem 1.1rem; cursor: pointer;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
-.gallery-tab.active, .gallery-tab:hover {
-  background: var(--gold); border-color: var(--gold);
-  color: var(--dark-brown);
-}
-.gallery-grid {
-  columns: 4 200px; column-gap: 0.5rem;
-}
-.gallery-item {
-  break-inside: avoid; margin-bottom: 0.5rem;
-  overflow: hidden; cursor: pointer;
-}
-.gallery-item img {
-  width: 100%; display: block;
-  transition: transform 0.4s ease;
-}
-.gallery-item:hover img { transform: scale(1.045); }
-.gallery-item.hidden { display: none; }
-
-/* BOOK */
-#book {
-  background: var(--dark-brown);
-  text-align: center;
-}
-#book .section-label { color: rgba(201,168,76,0.7); }
-#book h2 { color: var(--gold-light); }
-#book .lead { color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto 2.5rem; }
-#book .divider { margin: 1.3rem auto 2rem; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80px; }
-.book-buttons {
-  display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-.book-btn {
-  display: inline-flex; align-items: center; gap: 0.75rem;
-  padding: 1rem 2.2rem;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.82rem; font-weight: 400; letter-spacing: 0.14em;
-  text-transform: uppercase; text-decoration: none;
-  border: 1px solid transparent;
-  transition: all 0.25s ease;
-}
-.book-btn-airbnb {
-  background: #FF5A5F; color: #fff;
-  border-color: #FF5A5F;
-}
-.book-btn-airbnb:hover {
-  background: transparent; color: #FF5A5F;
-}
-.book-btn-booking {
-  background: #003580; color: #fff;
-  border-color: #003580;
-}
-.book-btn-booking:hover {
-  background: transparent; color: #6fa8e8; border-color: #6fa8e8;
-}
-.book-btn svg {
-  width: 18px; height: 18px; flex-shrink: 0; fill: currentColor;
-}
-.book-note {
-  margin-top: 2rem;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.7rem; letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.25);
-  text-transform: uppercase;
-}
-
-/* INQUIRY FORM */
-.book-divider {
-  display: flex; align-items: center; gap: 1.2rem;
-  margin: 3rem auto 2.5rem; max-width: 560px;
-}
-.book-divider::before, .book-divider::after {
-  content: ''; flex: 1;
-  height: 1px; background: rgba(201,168,76,0.2);
-}
-.book-divider span {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.7rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.35);
-  white-space: nowrap;
-}
-.inquiry-form {
-  max-width: 660px; margin: 0 auto; text-align: left;
-}
-.form-row {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem; margin-bottom: 1rem;
-}
-.form-row-2 {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1rem; margin-bottom: 1rem;
-}
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.68rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.25);
-  color: #fff; padding: 0.7rem 0.9rem;
-  font-family: 'Crimson Text', Georgia, serif;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-  width: 100%;
-  -webkit-appearance: none; appearance: none;
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus { border-color: rgba(201,168,76,0.7); }
-.form-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6); cursor: pointer; }
-.form-group select option { background: #2a1a0e; color: #fff; }
-.form-group textarea { resize: vertical; min-height: 90px; }
-.form-full { margin-bottom: 1rem; }
-.form-submit {
-  width: 100%; margin-top: 0.5rem;
-  background: var(--gold); color: var(--dark-brown);
-  border: none; padding: 1rem 2rem;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.8rem; letter-spacing: 0.18em;
-  text-transform: uppercase; cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
-}
-.form-submit:hover { background: var(--gold-light); }
-.form-submit:disabled { opacity: 0.5; cursor: default; }
-.form-status {
-  margin-top: 1rem; text-align: center;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.8rem; letter-spacing: 0.1em;
-  min-height: 1.4rem;
-}
-.form-status.success { color: #7ec87e; }
-.form-status.error { color: #e07070; }
-@media (max-width: 600px) {
-  .form-row { grid-template-columns: 1fr 1fr; }
-  .form-row-2 { grid-template-columns: 1fr; }
-}
-
-/* LIGHTBOX */
-#lightbox {
-  display: none; position: fixed; inset: 0;
-  z-index: 9999; background: rgba(0,0,0,0.96);
-  align-items: center; justify-content: center;
-}
-#lightbox.active { display: flex; }
-#lightbox img {
-  max-width: 90vw; max-height: 88vh;
-  object-fit: contain;
-  box-shadow: 0 0 80px rgba(0,0,0,0.7);
-}
-.lb-close {
-  position: absolute; top: 1.2rem; right: 1.5rem;
-  color: white; font-size: 2.2rem; cursor: pointer;
-  opacity: 0.6; background: none; border: none;
-  font-family: Arial, sans-serif; line-height: 1;
-  transition: opacity 0.2s;
-}
-.lb-close:hover { opacity: 1; }
-.lb-prev, .lb-next {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  color: white; font-size: 2.8rem; cursor: pointer;
-  opacity: 0.4; background: none; border: none;
-  font-family: Arial, sans-serif; padding: 1rem;
-  line-height: 1; transition: opacity 0.2s;
-}
-.lb-prev { left: 0.5rem; }
-.lb-next { right: 0.5rem; }
-.lb-prev:hover, .lb-next:hover { opacity: 1; }
-.lb-caption {
-  position: absolute; bottom: 1.2rem; left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.5);
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.12em;
-  text-transform: uppercase; white-space: nowrap;
-}
-
-/* FOOTER */
-footer {
-  background: #0d0804; color: rgba(255,255,255,0.65);
-  padding: 3.5rem 2rem; text-align: center;
-}
-.footer-logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.55rem; color: var(--gold-light);
-  margin-bottom: 0.8rem; letter-spacing: 0.04em;
-}
-footer p {
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.76rem; letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;
-}
-footer em { color: rgba(201,168,76,0.75); font-style: italic; }
-.heritage-badge {
-  display: inline-block; margin-top: 1.8rem;
-  border: 1px solid rgba(201,168,76,0.4);
-  padding: 0.45rem 1.5rem;
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.68rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(201,168,76,0.55);
-}
-
-/* CTA BUTTON */
-.cta-button {
-  display: inline-block;
-  padding: 0.9rem 2.4rem;
-  border: 1px solid var(--gold-light);
-  color: var(--gold-light);
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  margin-top: 1.8rem;
-}
-.cta-button:hover {
-  background: var(--gold);
-  color: var(--dark-brown);
-  border-color: var(--gold);
-}
-
-/* FAMILY PORTRAITS */
-.family-portrait {
-  width: 110px; height: 140px;
-  object-fit: cover; border-radius: 4px;
-  border: 2px solid var(--gold-light);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  flex-shrink: 0;
-}
-.izedin-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0 2.5rem;
-}
-.izedin-photos figure { margin: 0; }
-.izedin-photos img {
-  width: 100%; height: 200px;
-  object-fit: cover; cursor: pointer;
-  border-radius: 3px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.izedin-photos img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
-}
-.izedin-photos figcaption {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.7rem; color: var(--text-light);
-  letter-spacing: 0.06em; margin-top: 0.45rem;
-  font-style: italic;
-}
-
-/* NEVIN BLOCK */
-.nevin-block {
-  background: var(--cream);
-  border-left: 3px solid var(--gold);
-  padding: 2.5rem 3rem;
-  margin-top: 3rem;
-  border-radius: 0 4px 4px 0;
-}
-.nevin-block h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem; color: var(--medium-brown);
-  margin-bottom: 0.8rem;
-}
-.nevin-block p {
-  color: var(--text-light);
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-/* HERITAGE PHOTOS */
-.heritage-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  margin: 1.8rem 0 0;
-}
-.heritage-photos figure { margin: 0; }
-.heritage-photos img {
-  width: 100%; height: 220px;
-  object-fit: cover; cursor: pointer;
-  border-radius: 3px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.heritage-photos img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
-}
-.heritage-photos figcaption {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.7rem; color: var(--text-light);
-  letter-spacing: 0.06em; margin-top: 0.45rem;
-  font-style: italic;
-}
-
-/* VISION SECTION */
-.vision-section {
-  background: var(--dark-brown);
-  color: rgba(255,255,255,0.85);
-}
-.vision-section .section-label { color: var(--gold); }
-.vision-section h2 { color: var(--gold-light); }
-.vision-section .divider { background: linear-gradient(90deg, var(--gold-light), transparent); }
-.vision-section .lead { color: rgba(255,255,255,0.65); }
-.vision-features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin: 3.5rem 0 3rem;
-}
-.vision-feature h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--gold-light);
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.02em;
-}
-.vision-feature ul {
-  list-style: none; padding: 0; margin: 0;
-}
-.vision-feature ul li {
-  padding: 0.45rem 0 0.45rem 1.3rem;
-  position: relative;
-  font-size: 0.92rem;
-  color: rgba(255,255,255,0.58);
-  line-height: 1.65;
-}
-.vision-feature ul li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: var(--gold);
-}
-.vision-cta {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(201,168,76,0.15);
-  margin-top: 1rem;
-}
-.vision-cta p {
-  color: rgba(255,255,255,0.45);
-  font-family: 'Lato', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.5rem;
-}
-
-/* HAMBURGER MENU */
-.nav-toggle {
-  display: none;
-  background: none; border: none; cursor: pointer;
-  padding: 0.5rem; flex-direction: column;
-  gap: 5px;
-}
-.nav-toggle span {
-  display: block; width: 22px; height: 2px;
-  background: var(--gold-light);
-  transition: all 0.3s ease;
-}
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* INQUIRY TYPE */
-.form-row-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* FADE-IN */
-.fade-in {
-  opacity: 0; transform: translateY(22px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 800px) {
-  .nav-toggle { display: flex; }
-  nav ul {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: rgba(20,10,4,0.98);
-    flex-direction: column;
-    padding: 0.5rem 0;
-    border-top: 1px solid rgba(201,168,76,0.15);
-  }
-  nav ul.nav-open { display: flex; }
-  nav ul li { width: 100%; }
-  nav ul li a {
-    display: block;
-    padding: 0.9rem 2rem;
-    border-bottom: 1px solid rgba(201,168,76,0.08);
-  }
-  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-image::before { display: none; }
-  .gallery-grid { columns: 2 150px; }
-  .timeline-photos { grid-template-columns: 1fr 1fr; }
-  section { padding: 4rem 1.25rem; }
-  .persecution-block { padding: 2rem 1.5rem; }
-  .nevin-block { padding: 1.8rem 1.5rem; }
-  .vision-features { grid-template-columns: 1fr; gap: 2rem; }
-  .heritage-photos { grid-template-columns: 1fr; }
-  .heritage-photos img { height: 260px; }
-  .izedin-photos { grid-template-columns: 1fr; }
-  .izedin-photos img { height: 260px; }
-  .family-portrait { width: 80px; height: 100px; }
-  .form-row-3 { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .gallery-grid { columns: 2 110px; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -815,7 +68,9 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
       <li><a href="#history">History</a></li>
       <li><a href="#restoration">Restoration</a></li>
       <li><a href="#vision">The Vision</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="berat-history.html">Berat</a></li>
+      <li><a href="invest-berat.html">Invest</a></li>
       <li><a href="#book">Enquire</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -870,6 +125,43 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
       <p>Their influence bridged Ottoman administration, Albanian patriotism, the Declaration of Independence of 1912, and the formation of the modern Albanian state — until the communist takeover of 1944 targeted them as class enemies, confiscated their estates, demolished their palaces, and persecuted family members with extraordinary brutality.</p>
     </div>
 
+    <div class="fade-in">
+      <h3>Izedin Vrioni — Mayor of Berat</h3>
+      <p>Izedin Vrioni (also written Yzedin Bej Vrioni) was the son of Galip Pasha Vrioni of the Fier branch and Nasip hanëm Vlora, and brother of Qemal Bey Vrioni. He is the family member most closely associated with this property — an official 2016 Albanian heritage decision names the protected building <em>Objekti i Yzedin Galip Pashë Vrioni</em>.</p>
+      <p>He served as one of Berat's most prominent mayors across the formative decades of Albanian independence, repeatedly called upon for his leadership in a politically volatile era. He also commanded the Berat forces during the <strong>Vlora War</strong> of June–August 1920 — the decisive confrontation between Albanian nationalists and the Kingdom of Italy, whose Albanian victory compelled Italy to relinquish Vlorë and formally recognise Albania's 1913 borders.</p>
+
+      <div class="izedin-photos">
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Galip%20Vrioni.webp" alt="Izedin Vrioni on a balcony overlooking Berat, circa 1930s" onclick="openLightbox(this.src, 'Izedin Vrioni overlooking Berat, c. 1930s')">
+          <figcaption>Izedin Vrioni overlooking Berat, c. 1930s</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Glip%20Vrioni%202.webp" alt="Izedin Vrioni, Mayor of Berat" onclick="openLightbox(this.src, 'Izedin Vrioni, Mayor of Berat')">
+          <figcaption>Izedin Vrioni, Mayor of Berat</figcaption>
+        </figure>
+        <figure>
+          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20and%20Xhemal%20Vrioni.webp" alt="Yzedin and Xhemal Vrioni" onclick="openLightbox(this.src, 'Yzedin and Xhemal Vrioni')">
+          <figcaption>Yzedin and Xhemal Vrioni</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <table class="mayor-table fade-in">
+      <thead>
+        <tr>
+          <th>Mayoral Term</th>
+          <th>Historical Context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1922</td><td>Post-independence consolidation period</td></tr>
+        <tr><td>1924</td><td>Period of political transition in Albania</td></tr>
+        <tr><td>1925–1928</td><td>Establishment of the Albanian Republic, then Kingdom</td></tr>
+        <tr><td>1935</td><td>Kingdom of Albania under King Zog I</td></tr>
+        <tr><td>1937</td><td>Final pre-war term; confirmed also in 1940 census records</td></tr>
+      </tbody>
+    </table>
+
     <div class="family-tree fade-in">
       <h3 style="font-size:1.15rem">Notable Members of the Vrioni Family</h3>
 
@@ -923,43 +215,6 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
       </div>
     </div>
 
-    <div class="fade-in">
-      <h3>Izedin Vrioni — Mayor of Berat</h3>
-      <p>Izedin Vrioni (also written Yzedin Bej Vrioni) was the son of Galip Pasha Vrioni of the Fier branch and Nasip hanëm Vlora, and brother of Qemal Bey Vrioni. He is the family member most closely associated with this property — an official 2016 Albanian heritage decision names the protected building <em>Objekti i Yzedin Galip Pashë Vrioni</em>.</p>
-      <p>He served as one of Berat's most prominent mayors across the formative decades of Albanian independence, repeatedly called upon for his leadership in a politically volatile era. He also commanded the Berat forces during the <strong>Vlora War</strong> of June–August 1920 — the decisive confrontation between Albanian nationalists and the Kingdom of Italy, whose Albanian victory compelled Italy to relinquish Vlorë and formally recognise Albania's 1913 borders.</p>
-
-      <div class="izedin-photos">
-        <figure>
-          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Galip%20Vrioni.webp" alt="Izedin Vrioni on a balcony overlooking Berat, circa 1930s" onclick="openLightbox(this.src, 'Izedin Vrioni overlooking Berat, c. 1930s')">
-          <figcaption>Izedin Vrioni overlooking Berat, c. 1930s</figcaption>
-        </figure>
-        <figure>
-          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Glip%20Vrioni%202.webp" alt="Izedin Vrioni, Mayor of Berat" onclick="openLightbox(this.src, 'Izedin Vrioni, Mayor of Berat')">
-          <figcaption>Izedin Vrioni, Mayor of Berat</figcaption>
-        </figure>
-        <figure>
-          <img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20and%20Xhemal%20Vrioni.webp" alt="Yzedin and Xhemal Vrioni" onclick="openLightbox(this.src, 'Yzedin and Xhemal Vrioni')">
-          <figcaption>Yzedin and Xhemal Vrioni</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <table class="mayor-table fade-in">
-      <thead>
-        <tr>
-          <th>Mayoral Term</th>
-          <th>Historical Context</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1922</td><td>Post-independence consolidation period</td></tr>
-        <tr><td>1924</td><td>Period of political transition in Albania</td></tr>
-        <tr><td>1925–1928</td><td>Establishment of the Albanian Republic, then Kingdom</td></tr>
-        <tr><td>1935</td><td>Kingdom of Albania under King Zog I</td></tr>
-        <tr><td>1937</td><td>Final pre-war term; confirmed also in 1940 census records</td></tr>
-      </tbody>
-    </table>
-
     <div class="persecution-block fade-in">
       <h3>Under Communist Rule, 1944–1990</h3>
       <p>After the communist takeover in 1944 the Vrioni family was branded "class enemies" — feudal bloodsuckers, enemies of the people. Their estates were nationalised under a series of confiscation laws; their historic Berat sarays were demolished in 1947. For forty years the Vrioni name was used as the archetypal symbol of oppression in Albanian school textbooks — a deliberate, systematic erasure of their historical contributions.</p>
@@ -1005,7 +260,7 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
       <div class="section-label">The Journey</div>
       <h2>Restoration of Vila Vrioni</h2>
       <div class="divider"></div>
-      <p class="lead">A meticulous, ongoing effort to return this heritage building to its former dignity — documented across visits from 2021 to 2025.</p>
+      <p class="lead">A meticulous, ongoing effort to return this heritage building to its former dignity — from the first emergency interventions in 2018 to the present day.</p>
     </div>
 
     <div class="timeline">
@@ -1022,6 +277,14 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
           <img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page18.webp" alt="Ornate ceiling plasterwork with floral motifs and technical restoration drawings" onclick="openLightbox(this.src,'Ceiling decoration — floral plasterwork, restoration analysis')">
           <img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page19.webp" alt="Ottoman hamami with domed ceiling and blue tile details" onclick="openLightbox(this.src,'The Hamami — Ottoman-era bath with domed ceiling')">
         </div>
+      </div>
+
+      <!-- 2018 -->
+      <div class="timeline-entry fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2018</div>
+        <div class="timeline-period">Roof Reconstruction — Emergency Stabilisation</div>
+        <p class="timeline-text">Restoration begins with the most urgent priority: securing the building itself. The original roof structure, weakened by decades of neglect under and after the communist regime, is fully reconstructed to halt further water damage and structural deterioration. With the roof sealed and the building protected from the elements, the foundation is laid for the comprehensive restoration to follow — work that has continued without interruption to the present day.</p>
       </div>
 
       <!-- 2021 -->
@@ -1162,277 +425,47 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
         </ul>
       </div>
     </div>
+    <div class="vision-features fade-in" style="grid-template-columns:1fr">
+      <div class="vision-feature">
+        <h3>The Hotel</h3>
+        <ul>
+          <li>13 exclusive guest rooms and suites across two restored heritage buildings</li>
+          <li>Hamam — Ottoman-era Turkish bath restored as a private spa</li>
+          <li>Restaurant and bar with courtyard dining</li>
+          <li>Ethnographic museum celebrating Vrioni and Berat heritage</li>
+          <li>Kulla e çajit — the historic tea tower, reimagined as a private lounge</li>
+          <li>Professional kitchen, laundry, reception, and full service infrastructure</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vision-specs fade-in">
+      <div class="spec-item">
+        <div class="spec-number">13</div>
+        <div class="spec-label">Guest Rooms</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-number">1,364</div>
+        <div class="spec-unit">m²</div>
+        <div class="spec-label">Total Plot</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-number">540</div>
+        <div class="spec-unit">m²</div>
+        <div class="spec-label">Built Area</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-number">824</div>
+        <div class="spec-unit">m²</div>
+        <div class="spec-label">Courtyard</div>
+      </div>
+    </div>
     <div class="vision-cta fade-in">
-      <p>For private enquiries, please get in touch.</p>
+      <p>For partnership and investment enquiries, please get in touch.</p>
       <a href="#book" class="cta-button">Private Enquiries</a>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-    <div class="fade-in">
-      <div class="section-label">Photography Archive</div>
-      <h2>Gallery</h2>
-      <div class="divider"></div>
-      <p class="lead">A visual record of Vila Vrioni across the years — from the family archive to the restoration in progress.</p>
-    </div>
-    <div class="gallery-tabs fade-in">
-      <button class="gallery-tab active" onclick="filterGallery('all',this)">All</button>
-      <button class="gallery-tab" onclick="filterGallery('2021',this)">2021</button>
-      <button class="gallery-tab" onclick="filterGallery('2022',this)">2022</button>
-      <button class="gallery-tab" onclick="filterGallery('2023',this)">2023</button>
-      <button class="gallery-tab" onclick="filterGallery('2025',this)">2025</button>
-      <button class="gallery-tab" onclick="filterGallery('heritage',this)">Heritage</button>
-    </div>
-    <div class="gallery-grid fade-in" id="galleryGrid">
-
-      <!-- 2021 -->
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_131709.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_132647.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_132813.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133014.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133105.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133237.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133316.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133340.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133621.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133758.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133900.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_133949.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134100.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134127.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134226.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134305.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134405.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134536.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134612.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134706.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_134808.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_135153.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_135305.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_135631.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      
-      
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_135757.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_135929.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_140445.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2021"><img src="Images%20Videos/IMG_20210724_141519.webp" alt="Vila Vrioni restoration, July 2021" loading="lazy" onclick="openLightbox(this.src)"></div>
-
-      <!-- 2022 -->
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115343.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115430.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115505.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115612.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115733.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_115957.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120019.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120146.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120337.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120534.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120603.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120757.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_120935.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121135.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121355.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121446.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121624.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121724.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121752.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_121821.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_122148.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_122724.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_122808.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_122917.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_123421.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_123727.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_124314.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2022"><img src="Images%20Videos/20220728_124613.webp" alt="Vila Vrioni restoration, July 2022" loading="lazy" onclick="openLightbox(this.src)"></div>
-
-      <!-- 2023 -->
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_075903.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_080426.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_083511.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_083543.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_083627.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_083711.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084207.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084251.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084356.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084424.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084508.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084536.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084609.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084632.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084811.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_084915.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085001.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085124.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085201.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085310.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085358.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085645.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085728.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085811.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_085841.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090008.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090100.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090156.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090246.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090318.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090407.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090438.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090505.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090542.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090617.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090655.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090735.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_090900.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_091301.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-      
-      <div class="gallery-item" data-year="2023"><img src="Images%20Videos/20230807_091405.webp" alt="Vila Vrioni restoration, August 2023" loading="lazy" onclick="openLightbox(this.src)"></div>
-
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133011.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133030.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133055.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133146.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133249.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133322.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133437.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/hero-facade.webp" alt="Vila Vrioni front facade restoration, Berat Albania" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133801.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_133830.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-      <div class="gallery-item" data-year="2025"><img src="Images%20Videos/20250422_134024.webp" alt="Vila Vrioni restoration, April 2025" loading="lazy" onclick="openLightbox(this.src)"></div>
-
-      <!-- Heritage -->
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/Omer_Vrionis_opt.webp" alt="Omer Pasha Vrioni I, Ottoman general" loading="lazy" onclick="openLightbox(this.src, 'Omer Pasha Vrioni I — Ottoman general, d. 1828')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Galip%20Vrioni.webp" alt="Izedin Vrioni overlooking Berat" loading="lazy" onclick="openLightbox(this.src, 'Izedin Vrioni overlooking Berat, c. 1930s')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20Glip%20Vrioni%202.webp" alt="Izedin Vrioni, Mayor of Berat" loading="lazy" onclick="openLightbox(this.src, 'Izedin Vrioni, Mayor of Berat')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Yzedin%20and%20Xhemal%20Vrioni.webp" alt="Yzedin and Xhemal Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Yzedin and Xhemal Vrioni')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Nevin%20with%20her%20mother.webp" alt="Nevin with her mother in the courtyard of Vila Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Nevin with her mother, in the courtyard of Vila Vrioni')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Nevin%202.webp" alt="Young Nevin Vrioni" loading="lazy" onclick="openLightbox(this.src, 'Young Nevin Vrioni')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/tefunditqebanuannevile/Xhemal%20and%20Nevin%20with%20friends%20in%20Berat.webp" alt="Xhemal and Nevin with friends in Berat" loading="lazy" onclick="openLightbox(this.src, 'Xhemal and Nevin with friends in Berat')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page13.webp" alt="3D rendering — Vila Vrioni courtyard restored" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — courtyard view')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page10.webp" alt="3D rendering — Vila Vrioni aerial view" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — aerial view')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page11.webp" alt="3D rendering — Vila Vrioni corner view" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — corner view')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page5.webp" alt="Architectural elevation — south facade restoration plan" loading="lazy" onclick="openLightbox(this.src, 'Architectural elevation — south facade')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page2.webp" alt="Floor plan — ground floor restoration layout" loading="lazy" onclick="openLightbox(this.src, 'Ground floor restoration plan')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page1.webp" alt="Vila Vrioni exterior views, 2010-2012" loading="lazy" onclick="openLightbox(this.src, 'Vila Vrioni exterior — pre-restoration, 2010–2012')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page3.webp" alt="Vila Vrioni compound aerial satellite view with site boundaries" loading="lazy" onclick="openLightbox(this.src, 'Compound overview — satellite with site boundaries')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page10.webp" alt="South facade survey with pre-restoration photos" loading="lazy" onclick="openLightbox(this.src, 'South facade — architectural survey, 2012')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page17.webp" alt="Dhoma e Mire — decorative fireplace with bas-relief" loading="lazy" onclick="openLightbox(this.src, 'Dhoma e Mire — Ottoman decorative niche')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page18.webp" alt="Ceiling plasterwork with floral motifs" loading="lazy" onclick="openLightbox(this.src, 'Ceiling decoration — floral plasterwork')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page19.webp" alt="Ottoman hamami with domed ceiling" loading="lazy" onclick="openLightbox(this.src, 'The Hamami — Ottoman-era bath')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page7.webp" alt="East elevation showing kulla tower" loading="lazy" onclick="openLightbox(this.src, 'East elevation — kulla tower')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page9.webp" alt="Cross-section showing interior vault structure" loading="lazy" onclick="openLightbox(this.src, 'Architectural cross-section')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Projekti_i_Beratit_G_page12.webp" alt="3D rendering — entrance courtyard" loading="lazy" onclick="openLightbox(this.src, 'Restoration vision — entrance courtyard')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page4.webp" alt="Courtyard plan with condition survey photos" loading="lazy" onclick="openLightbox(this.src, 'Courtyard survey — condition documentation')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page6.webp" alt="Ceiling plans with carved wooden ceiling photos" loading="lazy" onclick="openLightbox(this.src, 'Ceiling survey — carved wooden panels')"></div>
-      <div class="gallery-item" data-year="heritage"><img src="Images%20Videos/pdf_extracts/Prezantim_Yzedin_Gal_page9.webp" alt="First floor plan with door and ceiling details" loading="lazy" onclick="openLightbox(this.src, 'First floor — doors and ceiling documentation')"></div>
-
-    </div>
-  </div>
-</section>
 
 <!-- BOOK -->
 <section id="book">
@@ -1534,157 +567,6 @@ footer em { color: rgba(201,168,76,0.75); font-style: italic; }
   <div class="lb-caption" id="lbCaption"></div>
 </div>
 
-<script>
-var lbImages = [];
-var lbIndex = 0;
-
-function openLightbox(src, caption) {
-  var lb = document.getElementById('lightbox');
-  document.getElementById('lbImg').src = src;
-  document.getElementById('lbCaption').textContent = caption || '';
-  lb.classList.add('active');
-  buildImageList(src);
-}
-
-function buildImageList(currentSrc) {
-  var items = document.querySelectorAll('.gallery-item:not(.hidden) img, .timeline-photos img[src]');
-  lbImages = [];
-  items.forEach(function(img) {
-    if (img.src && img.src.indexOf('openLightbox') === -1) {
-      lbImages.push(img.src);
-    }
-  });
-  lbIndex = lbImages.indexOf(currentSrc);
-  if (lbIndex === -1) lbIndex = 0;
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-}
-
-function lbNav(dir) {
-  if (lbImages.length === 0) return;
-  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
-  document.getElementById('lbImg').src = lbImages[lbIndex];
-  document.getElementById('lbCaption').textContent = '';
-}
-
-document.getElementById('lightbox').addEventListener('click', function(e) {
-  if (e.target === this) closeLightbox();
-});
-
-document.addEventListener('keydown', function(e) {
-  if (!document.getElementById('lightbox').classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') lbNav(1);
-  if (e.key === 'ArrowLeft') lbNav(-1);
-});
-
-function filterGallery(year, btn) {
-  document.querySelectorAll('.gallery-tab').forEach(function(t) { t.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
-  document.querySelectorAll('.gallery-item').forEach(function(item) {
-    if (year === 'all' || item.dataset.year === year) {
-      item.classList.remove('hidden');
-    } else {
-      item.classList.add('hidden');
-    }
-  });
-}
-
-// Inquiry form
-(function() {
-  // Set min dates
-  var today = new Date().toISOString().split('T')[0];
-  var checkin = document.getElementById('checkin');
-  var checkout = document.getElementById('checkout');
-  checkin.min = today;
-  checkout.min = today;
-
-  checkin.addEventListener('change', function() {
-    if (this.value) {
-      var next = new Date(this.value);
-      next.setDate(next.getDate() + 1);
-      checkout.min = next.toISOString().split('T')[0];
-      if (checkout.value && checkout.value <= this.value) checkout.value = '';
-    }
-  });
-
-  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('formSubmit');
-    var status = document.getElementById('formStatus');
-
-    // Validate dates
-    if (checkout.value && checkout.value <= checkin.value) {
-      status.className = 'form-status error';
-      status.textContent = 'Check-out must be after check-in.';
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    status.className = 'form-status';
-    status.textContent = '';
-
-    var data = new FormData(this);
-
-    fetch('send.php', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function(res) {
-      if (res.ok) {
-        status.className = 'form-status success';
-        status.textContent = 'Thank you — we will be in touch shortly.';
-        document.getElementById('inquiryForm').reset();
-        checkin.min = today;
-        checkout.min = today;
-      } else {
-        throw new Error();
-      }
-    })
-    .catch(function() {
-      status.className = 'form-status error';
-      status.textContent = 'Something went wrong. Please email us directly.';
-    })
-    .finally(function() {
-      btn.disabled = false;
-      btn.textContent = 'Send Enquiry';
-    });
-  });
-})();
-
-// Intersection Observer for fade-in
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
-
-// Hamburger menu
-document.getElementById('navToggle').addEventListener('click', function() {
-  var ul = this.parentElement.querySelector('ul');
-  var expanded = this.getAttribute('aria-expanded') === 'true';
-  ul.classList.toggle('nav-open');
-  this.classList.toggle('active');
-  this.setAttribute('aria-expanded', String(!expanded));
-});
-document.querySelectorAll('nav ul li a').forEach(function(link) {
-  link.addEventListener('click', function() {
-    var ul = document.querySelector('nav ul');
-    var toggle = document.getElementById('navToggle');
-    ul.classList.remove('nav-open');
-    toggle.classList.remove('active');
-    toggle.setAttribute('aria-expanded', 'false');
-  });
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>

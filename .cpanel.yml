@@ -3,6 +3,12 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/sealifee/vrioni.al/
     - /bin/cp -R index.html "$DEPLOYPATH"
+    - /bin/cp -R gallery.html "$DEPLOYPATH"
+    - /bin/cp -R berat-history.html "$DEPLOYPATH"
+    - /bin/cp -R invest-berat.html "$DEPLOYPATH"
+    - /bin/cp -R style.css "$DEPLOYPATH"
+    - /bin/cp -R script.js "$DEPLOYPATH"
+    - /bin/cp -R sitemap.xml "$DEPLOYPATH"
     - /bin/cp -R .htaccess "$DEPLOYPATH"
     - /bin/cp -R llms.txt "$DEPLOYPATH"
     - /bin/cp -R robots.txt "$DEPLOYPATH"

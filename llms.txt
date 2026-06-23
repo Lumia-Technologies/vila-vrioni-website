@@ -3,9 +3,11 @@
 > A protected late Ottoman manor in [Berat](https://vrioni.al), Albania's UNESCO World Heritage city. Ancestral home of the Vrioni dynasty, restored by family descendants.
 
 - [Vila Vrioni Website](https://vrioni.al)
-- [Gallery](https://vrioni.al/#gallery)
+- [Gallery](https://vrioni.al/gallery.html)
 - [History](https://vrioni.al/#history)
 - [The Vision](https://vrioni.al/#vision)
+- [History of Berat](https://vrioni.al/berat-history.html)
+- [Invest in Berat](https://vrioni.al/invest-berat.html)
 - [Enquire](https://vrioni.al/#book)
 
 ## About
@@ -26,7 +28,7 @@ The [Vrioni dynasty](https://en.wikipedia.org/wiki/Vrioni_family) is one of Alba
 
 - Location: Mangalem quarter, [Berat](https://en.wikipedia.org/wiki/Berat), Albania ([UNESCO World Heritage City](https://whc.unesco.org/en/list/569))
 - Type: Late Ottoman manor compound
-- Status: Protected Cultural Monument, under active restoration since 2021
+- Status: Protected Cultural Monument, under active restoration since 2018
 - Features: Stone barrel vaults, walnut coffered ceilings, arched konak, limestone courtyard, Ottoman hamami
 - Legal: [ECHR Vrioni and Others v. Albania (2009)](https://hudoc.echr.coe.int/eng?i=001-95306)
 
